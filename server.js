@@ -12,6 +12,7 @@ const
     passport = require('passport'),
     passportConfig = require('./config/passport'),
     methodOverride = require('method-override'),
+    placesRouter = require('./routes/places.js'),
     usersRouter = require('./routes/users.js'),
     logger = require('morgan');
 
@@ -35,7 +36,8 @@ const store = new MongoDBStore({
 
 // Middleware
 app.use(logger('dev'))
-// app.use(express.json())
+// Allows us to parse the body object attached to requests for form data.
+app.use(express.json())
 // app.use(express.static('public')) // ONLY FOR SPA
 app.use(cookieParser()) // interpret cookies that are attached to requests
 app.use(express.urlencoded({extended: true})) // interpret standard form data in requests
@@ -68,17 +70,13 @@ app.use((req, res, next) => {
 	next();
 })
 
-
-
-
-
 //root route
 app.get('/', (req,res) => {
 	res.render('index')
 })
 
 app.use('/users', usersRouter)
-
+app.use('/places', placesRouter);
 
 app.listen(port, (err) => {
 	console.log(err || "Server running on port " + port)

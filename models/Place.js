@@ -1,13 +1,18 @@
-const
-  mongoose = require('mongoose'),
-  bcrypt = require('bcrypt-nodejs'),
-  placeSchema = new mongoose.Schema({
-    name: String,
+const mongoose = require('mongoose')
+
+const postSchema = new mongoose.Schema({
+    title: String,
+    body: String,
+    author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+})
+
+const placeSchema = new mongoose.Schema({
     city: String,
-  })
+    country: String,
+    image: String,
+    posts: [postSchema]
+})
 
+const Place = mongoose.model('Place', placeSchema)
 
-
-
-  const User = mongoose.model('Place', placeSchema)
 module.exports = Place
