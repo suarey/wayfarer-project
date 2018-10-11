@@ -13,6 +13,7 @@ const placeSchema = new mongoose.Schema({
     posts: [postSchema]
 })
 
+
 const Place = mongoose.model('Place', placeSchema)
 
 module.exports = Place

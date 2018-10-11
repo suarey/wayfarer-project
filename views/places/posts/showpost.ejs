@@ -1,0 +1,17 @@
+
+
+
+
+
+
+<h2><%= post.title %></h2>
+
+<p><%= post.body %></p>
+<% if (loggedIn) { %>
+<a href="/places/<%= place_id %>/posts/<%= post._id %>/edit"><button>Edit Post</button></a>
+
+<form method="post" action="/places/<%= place_id %>/posts/<%= post._id %>?_method=DELETE">
+    <button>Delete Post</button>
+    <% } %>
+<!-- alert Are you sure you want to delete #{title}? -->
+</form> 

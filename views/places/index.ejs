@@ -1,0 +1,5 @@
+<div class="jumbotron">
+        <% for(var i = 0; i < places.length; i++) { %>
+                <a href="/places/<%=places[i]._id%>"><h1><%= places[i].city %></h1></a>
+        <% } %>
+</div>

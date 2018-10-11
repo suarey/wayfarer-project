@@ -13,6 +13,7 @@ const
     passportConfig = require('./config/passport'),
     methodOverride = require('method-override'),
     placesRouter = require('./routes/places.js'),
+    postsRouter = require('./routes/places.js'),
     usersRouter = require('./routes/users.js'),
     logger = require('morgan');
 
@@ -43,6 +44,8 @@ app.use(cookieParser()) // interpret cookies that are attached to requests
 app.use(express.urlencoded({extended: true})) // interpret standard form data in requests
 app.use(flash()) // set and reset flash messages
 app.use(methodOverride('_method')) // Allows use to use 'PATCH', 'PUT', and 'DELETE' in HTML forms
+
+
 
 // ejs configuration
 app.set('view engine', 'ejs')
@@ -75,8 +78,9 @@ app.get('/', (req,res) => {
 	res.render('index')
 })
 
-app.use('/users', usersRouter)
+app.use('/users', usersRouter);
 app.use('/places', placesRouter);
+// app.use('/places/:place_id/posts', postsRouter);
 
 app.listen(port, (err) => {
 	console.log(err || "Server running on port " + port)
