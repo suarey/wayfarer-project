@@ -7,7 +7,7 @@
 <h2><%= post.title %></h2>
 
 <p><%= post.body %></p>
-<% if (loggedIn) { %>
+<% if (loggedIn && String(currentUser._id) === String(post.author)) { %>
 <a href="/places/<%= place_id %>/posts/<%= post._id %>/edit"><button>Edit Post</button></a>
 
 <form method="post" action="/places/<%= place_id %>/posts/<%= post._id %>?_method=DELETE">

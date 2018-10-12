@@ -6,8 +6,8 @@ const Place = require('../models/Place')
 exports.index = (req,res) => {
     Place.find({}, (err, places) => {
         if(err) return console.log(err) 
-       // res.json({ success: true, payload: places})
-       res.render('places/index', { success: true, places})
+     // res.json({ success: true, payload: places})
+     res.render('places/index', { success: true, places})
     })
 }
 

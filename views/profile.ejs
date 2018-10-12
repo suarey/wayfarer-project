@@ -9,24 +9,12 @@
 </div>
 
 <h2>Recent Posts</h2>
+<% place.forEach(p => { %>
 <div class="card" style="margin-bottom: 2rem">
   <div class="card-body">
-    <h5 class="card-title">Post Title</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aperiam maiores aliquid quibusdam quasi neque aliquam ut eius magnam nisi soluta doloribus corrupti obcaecati optio repellendus aut voluptatem, velit minus...</p>
-    <a href="#" class="btn btn-primary">Read More</a>
+    <h5 class="card-title"><%= p.title %>></h5>
+    <p class="card-text"><%= p.body %></p>
+    <a href="/places/<%= place_id %>/posts/<%= post._id %>" class="btn btn-primary">Read More</a>
   </div>
 </div>
-<div class="card" style="margin-bottom: 2rem">
-  <div class="card-body">
-    <h5 class="card-title">Post Title</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aperiam maiores aliquid quibusdam quasi neque aliquam ut eius magnam nisi soluta doloribus corrupti obcaecati optio repellendus aut voluptatem, velit minus...</p>
-    <a href="#" class="btn btn-primary">Read More</a>
-  </div>
-</div>
-<div class="card" style="margin-bottom: 2rem">
-  <div class="card-body">
-    <h5 class="card-title">Post Title</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aperiam maiores aliquid quibusdam quasi neque aliquam ut eius magnam nisi soluta doloribus corrupti obcaecati optio repellendus aut voluptatem, velit minus...</p>
-    <a href="#" class="btn btn-primary">Read More</a>
-  </div>
-</div>
+<% }) %>

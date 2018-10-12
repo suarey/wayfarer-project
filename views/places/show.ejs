@@ -1,4 +1,4 @@
-<div class="row">
+<div class="container">
     <div class="col s12 m6">
       <div class="card large">
         <div class="card-image">
@@ -6,7 +6,7 @@
         
 
         </div>
-        <div class="card-content">
+        <div class="card-title">
                 <h1 class="card-title"><%= place.city %></h1>
         </div>
       </div>
@@ -14,14 +14,13 @@
   </div>
 
 <style>
-img {
+/* img {
     height: 400px;
     width: 400px; 
-}
+} */
 
-#card-content {
-    text-align: center;
-}
+
+
 
 </style>
  
@@ -29,7 +28,7 @@ img {
 
 
 <% for(var i = 0; i < place.posts.length; i++) { %>
-       <a href="/places/<%= place._id %>/posts/<%= place.posts[i]._id%>"><h4 style="color: black"><%= place.posts[i].title %></h4></a> 
+       <a href="/places/<%= place._id %>/posts/<%= place.posts[i]._id%>"><h4 style="background:black"  class=" center #ffff00-text yellow-text accent-2-text"  ><%= place.posts[i].title %></h4></a> 
 <% } %> 
 
 <% if (loggedIn) { %>

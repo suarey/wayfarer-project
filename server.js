@@ -15,6 +15,7 @@ const
     placesRouter = require('./routes/places.js'),
     postsRouter = require('./routes/places.js'),
     usersRouter = require('./routes/users.js'),
+    path = require('path'),
     logger = require('morgan');
 
 // Environment port
@@ -44,7 +45,7 @@ app.use(cookieParser()) // interpret cookies that are attached to requests
 app.use(express.urlencoded({extended: true})) // interpret standard form data in requests
 app.use(flash()) // set and reset flash messages
 app.use(methodOverride('_method')) // Allows use to use 'PATCH', 'PUT', and 'DELETE' in HTML forms
-
+app.use('/static', express.static(path.join(_dirname, 'public')));
 
 
 // ejs configuration
